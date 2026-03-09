@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FinAI | Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --bg-dark: #0d1117; --card-dark: #161b22; --accent: #58a6ff; --gradient: linear-gradient(90deg, #58a6ff, #bc85ff); }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg-dark); color: #c9d1d9; margin: 0; display: flex; }
+        
+        .sidebar { width: 280px; background: #010409; height: 100vh; padding: 30px; border-right: 1px solid #30363d; position: fixed; }
+        .sidebar-brand { font-size: 2rem; color: white; font-weight: bold; margin-bottom: 50px; display: flex; gap: 10px; align-items: center; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar a { color: #8b949e; text-decoration: none; display: block; padding: 15px 0; font-size: 1.1rem; }
+        .sidebar a.active { color: var(--accent); font-weight: bold; }
+
+        .main-content { margin-left: 280px; flex: 1; padding: 50px; }
+        
+        .ai-promo-card { display: flex; background: var(--card-dark); border: 1px solid #30363d; border-radius: 20px; overflow: hidden; margin-bottom: 40px; }
+        .promo-image { flex: 1; height: 300px; }
+        .promo-image img { width: 100%; height: 100%; object-fit: cover; }
+        .promo-text { flex: 1.5; padding: 40px; }
+        .btn-glow { background: var(--gradient); color: white; border: none; padding: 15px 30px; border-radius: 12px; font-weight: bold; cursor: pointer; }
+
+        .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .card { background: var(--card-dark); padding: 30px; border-radius: 20px; border: 1px solid #30363d; }
+        .amount { font-size: 2.5rem; color: white; font-weight: bold; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-brand"><i class="fas fa-chart-line"></i> FinAI</div>
+        <ul>
+            <li><a href="index.html" class="active">Dashboard</a></li>
+            <li><a href="about.html">AI Strategy</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="ai-promo-card">
+            <div class="promo-image">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80">
+            </div>
+            <div class="promo-text">
+                <h2>Try Now: Investment plans with Artificial Intelligence</h2>
+                <p>Launch the FinAI Agent to generate a custom strategy for your revenue goals.</p><br>
+                <button class="btn-glow" onclick="window.location.href='about.html'">Launch AI Agent</button>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>Total Savings</h3>
+                <p class="amount" id="balance">$12,450.00</p>
+                <button onclick="addMoney()" style="background:transparent; color:var(--accent); border:1px solid var(--accent); padding:10px 20px; border-radius:8px; cursor:pointer;">Add Funds</button>
+            </div>
+            <div class="card">
+                <h3>Auto-Debit Plan</h3>
+                <p>Next: <strong>March 25th</strong></p>
+                <p style="color:#8b949e">Plan: Life Insurance + Mutual Funds</p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

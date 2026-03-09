@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FinAI | AI Strategy</title>
+    <style>
+        :root { --bg-dark: #0d1117; --card-dark: #161b22; --accent: #58a6ff; --gradient: linear-gradient(90deg, #58a6ff, #bc85ff); }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg-dark); color: #c9d1d9; margin: 0; display: flex; }
+        .sidebar { width: 280px; background: #010409; height: 100vh; padding: 30px; border-right: 1px solid #30363d; position: fixed; }
+        .sidebar a { color: #8b949e; text-decoration: none; display: block; padding: 15px 0; }
+        .sidebar a.active { color: var(--accent); font-weight: bold; }
+        .main-content { margin-left: 280px; flex: 1; padding: 50px; }
+        .card { background: var(--card-dark); padding: 30px; border-radius: 20px; border: 1px solid #30363d; margin-top: 30px; }
+        input { width: 100%; padding: 15px; margin: 10px 0; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 10px; }
+        .btn-glow { background: var(--gradient); color: white; border: none; padding: 15px 30px; border-radius: 12px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <div style="font-size: 2rem; color: white; font-weight: bold; margin-bottom: 50px;">FinAI</div>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="about.html" class="active">AI Strategy</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <h1>AI Investment Agent</h1>
+        <p>Enter your details below to generate a life-term investment plan.</p>
+        <div class="card">
+            <input type="number" id="age" placeholder="Your Age">
+            <input type="number" id="monthly-save" placeholder="Monthly Savings ($)">
+            <input type="number" id="yearly-rev" placeholder="Yearly Revenue ($)">
+            <button class="btn-glow" onclick="runAIAgent()">Generate Optimal Plan</button>
+        </div>
+        <div id="ai-output"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

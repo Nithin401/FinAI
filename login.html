@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAI | The Future of Wealth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --card-dark: #161b22;
+            --accent: #58a6ff;
+            --gradient: linear-gradient(90deg, #58a6ff, #bc85ff);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg-dark); color: #c9d1d9; overflow-x: hidden; }
+
+        /* Navbar */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 8%; background: rgba(13, 17, 23, 0.95);
+            position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid #30363d;
+        }
+        .logo-container { font-size: 2.2rem; font-weight: 800; color: white; display: flex; align-items: center; gap: 12px; }
+        .logo-container i { color: var(--accent); }
+        .nav-menu { display: flex; align-items: center; gap: 40px; }
+        .nav-link { color: #8b949e; text-decoration: none; font-weight: 500; }
+        .btn-signin { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+
+        /* Hero Section */
+        .hero { padding: 180px 8% 100px; display: flex; align-items: center; gap: 50px; }
+        .hero-content { flex: 1; }
+        .hero-content h1 { font-size: 4.2rem; color: white; line-height: 1.1; margin-bottom: 30px; }
+        .gradient-text { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-image { flex: 1; }
+        .hero-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+
+        /* About Section */
+        .about-section { padding: 80px 8%; background: #010409; text-align: center; }
+        .about-card { background: var(--card-dark); padding: 50px; border-radius: 20px; border: 1px solid #30363d; max-width: 900px; margin: 0 auto; }
+        .about-card h2 { color: white; margin-bottom: 20px; font-size: 2rem; }
+
+        /* Footer */
+        .footer { padding: 40px 8%; background: var(--bg-dark); border-top: 1px solid #30363d; text-align: center; color: #8b949e; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 2000; }
+        .modal-content { background: var(--card-dark); padding: 40px; border-radius: 20px; width: 400px; position: relative; text-align: center; }
+        .modal-content input { width: 100%; padding: 12px; margin: 10px 0; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 8px; }
+        .btn-glow { width: 100%; background: var(--gradient); color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        .close { position: absolute; right: 20px; top: 15px; color: white; cursor: pointer; font-size: 1.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container"><i class="fas fa-microchip"></i> <span>FinAI</span></div>
+        <div class="nav-menu">
+            <a href="#about" class="nav-link">About</a>
+            <button class="btn-signin" onclick="toggleModal()">Sign In</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Invest Smarter with <br><span class="gradient-text">Neural Intelligence</span></h1>
+            <p>FinAI uses advanced machine learning to build wealth automatically.</p>
+            <button class="btn-glow" style="width:auto; padding: 15px 40px; margin-top:20px;" onclick="toggleModal()">Get Started Free</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80">
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="about-card">
+            <h2>Financial AI for Everyone</h2>
+            <p>Our platform uses proprietary algorithms to analyze your specific financial situation—including age, income, and savings—to generate the most optimal investment roadmap possible.</p>
+        </div>
+    </section>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal()">&times;</span>
+            <h2>Sign In</h2>
+            <input type="text" id="user" placeholder="Username (Admin)">
+            <input type="password" id="pass" placeholder="Password (1234)">
+            <button class="btn-glow" onclick="login()">Access Dashboard</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 FinAI Technologies. Empowering your financial future.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleModal() {
+            const m = document.getElementById('loginModal');
+            m.style.display = (m.style.display === "flex") ? "none" : "flex";
+        }
+    </script>
+</body>
+</html>
